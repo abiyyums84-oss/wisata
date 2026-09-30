@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ekowisata Silowo Tuban | Pesona Alam & Hutan Sagu</title>
+  <meta name="description" content="Jelajahi keindahan Ekowisata Silowo Tuban. Nikmati petualangan kano menyusuri aliran mata air jernih dan hutan pohon sagu purba di Merakurak, Tuban.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    :root {
+      --emerald-dark: #042017;
+      --emerald-primary: #093325;
+      --gold-accent: #e5b33d;
+      --gold-light: #fef7ec;
+      --text-main: #1e293b;
+      --card-bg: #ffffff;
+      --radius-lg: 28px;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #f8fafc;
+      color: var(--text-main);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 24px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.4s ease, padding 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(4, 32, 23, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 16px 8%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .logo span {
+      color: var(--gold-accent);
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--gold-accent);
+    }
+    .menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(180deg, rgba(4, 32, 23, 0.45), rgba(4, 32, 23, 0.85)),
+                  url('https://www.nativeindonesia.com/foto/2024/08/ekowisata-silowo-tuban.jpg') center/cover no-repeat;
+      padding: 100px 20px 60px;
+    }
+    .hero-content {
+      max-width: 900px;
+      z-index: 2;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 8px 22px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+    .hero h1 {
+      font-size: clamp(38px, 6.5vw, 68px);
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .hero h1 span {
+      color: var(--gold-accent);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold-accent);
+      color: var(--emerald-dark);
+      box-shadow: 0 10px 25px rgba(229, 179, 61, 0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(229, 179, 61, 0.45);
+    }
+    /* Common Sections */
+    section {
+      padding: 100px 8%;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+    .section-header span {
+      color: #198059;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .section-header h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      color: var(--emerald-dark);
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .section-header p {
+      color: #334155;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    /* Stats */
+    .stats-wrapper {
+      max-width: 1100px;
+      margin: -50px auto 0;
+      position: relative;
+      z-index: 10;
+      padding: 0 24px;
+    }
+    .stats-grid {
+      background: #fff;
+      border-radius: 28px;
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      box-shadow: 0 25px 50px rgba(4, 32, 23, 0.1);
+      text-align: center;
+    }
+    /* Profil */
+    #profil {
+      background: linear-gradient(135deg, rgba(229, 179, 61, 0.12) 0%, rgba(255, 255, 255, 0.95) 40%, rgba(4, 32, 23, 0.04) 100%);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .about-img-wrapper {
+      position: relative;
+    }
+    .about-main-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(4, 32, 23, 0.12);
+    }
+    .about-floating-card {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: var(--emerald-primary);
+      color: #fff;
+      padding: 24px 28px;
+      border-radius: 20px;
+      max-width: 260px;
+      border: 4px solid #fff;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    .about-floating-card h4 {
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: var(--gold-accent);
+    }
+    .about-content h3 {
+      font-size: 30px;
+      color: var(--emerald-dark);
+      font-weight: 800;
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+    .about-content p {
+      color: #334155;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+    .features-grid-list {
+      list-style: none;
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .features-grid-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--emerald-primary);
+    }
+    .features-grid-list li span {
+      width: 28px;
+      height: 28px;
+      background: var(--gold-light);
+      color: #125139;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+    /* Daya Tarik */
+    .attractions-section {
+      background: #f1f6f3;
+    }
+    .attractions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card-attraction {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(4, 32, 23, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-attraction:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(4, 32, 23, 0.12);
+    }
+    .card-img-box {
+      height: 230px;
+      overflow: hidden;
+    }
+    .card-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .card-attraction:hover .card-img-box img {
+      transform: scale(1.05);
+    }
+    .card-content {
+      padding: 28px;
+    }
+    .badge-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #125139;
+      background: var(--gold-light);
+      padding: 5px 12px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .card-content p {
+      color: #334155;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    /* Aktivitas */
+    #aktivitas {
+      background: linear-gradient(rgba(4, 32, 23, 0.88), rgba(9, 51, 37, 0.85)),
+                  url('https://nagantour.com/wp-content/uploads/2024/11/Berkano-di-Wisata-Silowo-Tuban.webp') center/cover no-repeat;
+    }
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .activity-card {
+      background: #fff;
+      padding: 35px 22px;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .activity-card:hover {
+      transform: translateY(-6px);
+    }
+    .activity-card h3 {
+      font-size: 18px;
+      color: var(--emerald-dark);
+      margin-bottom: 10px;
+    }
+    .activity-card p {
+      color: #334155;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    .activity-icon {
+      width: 65px;
+      height: 65px;
+      background: var(--gold-light);
+      color: var(--emerald-primary);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin: 0 auto 20px;
+    }
+    /* Pengunjung / Audiens */
+    .audience-section {
+      background: linear-gradient(180deg, rgba(4, 32, 23, 0.92), rgba(4, 32, 23, 0.95)),
+                  url('https://pagaralampos.disway.id/upload/1179e25ceccbe6bda10e56fa44c29438.jpg') center/cover no-repeat;
+    }
+    .audience-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 45px;
+    }
+    .tab-btn {
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--gold-accent);
+      color: var(--emerald-dark);
+      border-color: var(--gold-accent);
+    }
+    .audience-content-grid {
+      display: none;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .audience-content-grid.active {
+      display: grid;
+    }
+    .audience-card {
+      background: rgba(255, 255, 255, 0.96);
+      padding: 32px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .audience-card h4 {
+      color: var(--emerald-dark);
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+    .audience-card p {
+      color: #334155;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    /* Galeri */
+    .gallery-section {
+      background: #f8fafc;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      height: 270px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(4, 32, 23, 0.06);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+    /* Video Section */
+    .video-section {
+      background: linear-gradient(135deg, rgba(254, 247, 236, 0.7), rgba(241, 246, 243, 0.9));
+    }
+    .video-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+    .tiktok-card-container {
+      background: #fff;
+      padding: 16px;
+      border-radius: 28px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+    }
+    .tiktok-iframe-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      height: 600px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #042017;
+    }
+    .tiktok-iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    /* Lokasi */
+    #lokasi {
+      background: #fff;
+    }
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .info-card {
+      background: #f8fafc;
+      padding: 40px;
+      border-radius: 28px;
+      border: 1px solid #e2e8f0;
+    }
+    .info-row {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .info-icon-box {
+      width: 50px;
+      height: 50px;
+      background: var(--gold-light);
+      color: var(--emerald-primary);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .info-text h4 {
+      color: var(--emerald-dark);
+      margin-bottom: 4px;
+    }
+    .info-text p {
+      color: #334155;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .map-card-banner {
+      border-radius: 28px;
+      min-height: 440px;
+      background: linear-gradient(rgba(4, 32, 23, 0.6), rgba(4, 32, 23, 0.85)),
+                  url('https://cdn.surabayapagi.com/po-content/uploads/202506/silowo-tuban-destinasi-favorite-foto.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      color: #fff;
+    }
+    /* Footer */
+    footer {
+      background: var(--emerald-dark);
+      color: #fff;
+      padding: 70px 8% 30px;
+    }
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 30px auto 0;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 13px;
+    }
+    /* Scroll Animation (Fixed syntax bug) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Responsive */
+    @media (max-width: 968px) {
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 260px;
+        background: var(--emerald-dark);
+        flex-direction: column;
+        padding: 30px;
+        border-radius: 20px 0 0 20px;
+        transition: right 0.4s ease;
+        box-shadow: -10px 20px 30px rgba(0,0,0,0.3);
+      }
+      .nav-links.active {
+        right: 0;
+      }
+      .menu-btn {
+        display: block;
+      }
+      .about-grid, .location-grid, .footer-grid, .audience-content-grid, .video-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .attractions-grid, .gallery-grid, .activities-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      .about-floating-card {
+        right: 0;
+        bottom: -20px;
+      }
+    }
+    @media (max-width: 580px) {
+      section {
+        padding: 70px 6%;
+      }
+      .attractions-grid, .gallery-grid, .activities-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-floating-card {
+        position: static;
+        margin-top: 15px;
+        max-width: 100%;
+      }
+      .audience-tabs {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="#home" class="logo">SILO<span>WO</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#daya-tarik">Daya Tarik</a></li>
+      <li><a href="#aktivitas">Aktivitas</a></li>
+      <li><a href="#audiens">Pengunjung</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#lokasi">Lokasi</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-label="Buka Menu Navigasi">☰</button>
+  </nav>
+  <!-- Hero Section -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <div class="badge"> Ekowisata Alam Tersembunyi di Tuban</div>
+      <h1>Jelajahi Keindahan <span>Silowo</span></h1>
+      <p style="max-width:700px;margin:0 auto 28px;color:rgba(255,255,255,.92)">
+        Silowo menghadirkan perpaduan sempurna antara petualangan susur sungai dan ketenangan alam. Dengan air sumber yang jernih berpadu hijau toska serta deretan pohon sagu yang rindang, tempat ini menjadi destinasi ideal untuk melepas penat bersama keluarga.
+      </p>
+      <p style="font-style:italic;color:var(--gold-accent);font-weight:600;font-size:15px">
+        "Mendayung di antara sagu purba, menyisiri jernihnya Silowo."
+      </p>
+      <div style="margin-top:32px">
+        <a href="#profil" class="btn btn-primary">Mulai Jelajah </a>
+      </div>
+    </div>
+  </header>
+  <!-- Stats Grid -->
+  <div class="stats-wrapper">
+    <div class="stats-grid">
+      <div>
+        <h3 style="font-size:28px;color:var(--emerald-primary);font-weight:800">Rp5.000+Rp15.000</h3>
+        <p style="font-size:13px;color:#475569;font-weight:700;margin-top:4px">TIKET MASUK (KANO+Rp15.000)</p>
+      </div>
+      <div>
+        <h3 style="font-size:28px;color:var(--emerald-primary);font-weight:800">± 15 Menit</h3>
+        <p style="font-size:13px;color:#475569;font-weight:700;margin-top:4px">DARI PUSAT KOTA TUBAN</p>
+      </div>
+      <div>
+        <h3 style="font-size:28px;color:var(--emerald-primary);font-weight:800">08.00 - 15.00</h3>
+        <p style="font-size:13px;color:#475569;font-weight:700;margin-top:4px">JAM BUKA SETIAP HARI</p>
+      </div>
+    </div>
+  </div>
+  <!-- Profil Section -->
+  <section class="reveal" id="profil">
+    <div class="section-header">
+      <span>Mengenal Lebih Dekat</span>
+      <h2>Pesona Ekowisata Silowo</h2>
+      <p>Ekowisata Silowo adalah destinasi wisata berbasis alam di Desa Mandirejo, Merakurak, Tuban yang berkembang dari inisiatif warga lokal untuk menjaga kelestarian sumber mata air karst.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-img-wrapper">
+        <img src="https://cdn.surabayapagi.com/po-content/uploads/202506/silowo-tuban-destinasi-favorite-foto.jpg" alt="Aliran sungai jernih di Wisata Silowo Tuban" class="about-main-img">
+        <div class="about-floating-card">
+          <h4>Amazon Tuban</h4>
+          <p style="color:rgba(255,255,255,0.9);font-size:13px">Julukan populer berkat rimbunnya pohon sagu dan aliran sungai jernih kebiruan eksotis.</p>
+        </div>
+      </div>
+      <div class="about-content">
+        <h3>Oase Ketenangan di Tengah Rindangnya Hutan Sagu</h3>
+        <p><b>Apa itu Silowo?</b> Silowo merupakan kawasan aliran sungai yang bersumber dari mata air karst alami. Airnya berwarna hijau toska jernih hingga dasar pasir putih terlihat jelas. Pohon sagu setinggi 15 meter tumbuh liar membentuk kanopi teduh alami.</p>
+        <p><b>Sejarah Singkat:</b> Awalnya merupakan area persawahan dan kebun sagu warga. Melalui Pokdarwis Desa Mandirejo, kawasan ini ditata secara swadaya pada 2022 tanpa merusak habitat aslinya.</p>
+        <p><b>Konsep Ekowisata Berkelanjutan:</b> Pengelolaannya mengedepankan kelestarian alam: tidak ada bangunan permanen semen di bibir sungai, gazebo menggunakan bambu alami, dan kebersihan diawasi bersama.</p>
+        <ul class="features-grid-list">
+          <li><span>✓</span> Air Jernih Alami Karst</li>
+          <li><span>✓</span> Hutan Sagu Purba</li>
+          <li><span>✓</span> Dikelola Warga Lokal</li>
+          <li><span>✓</span> Ramah Anak & Keluarga</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- Daya Tarik Section -->
+  <section class="attractions-section reveal" id="daya-tarik">
+    <div class="section-header">
+      <span>Daya Tarik Utama</span>
+      <h2>Keindahan yang Ditawarkan Silowo</h2>
+      <p>Setiap sudut Silowo memiliki keunikan tersendiri yang membuat pengunjung selalu ingin kembali.</p>
+    </div>
+    <div class="attractions-grid">
+      <div class="card-attraction">
+        <div class="card-img-box">
+          <img src="https://pagaralampos.disway.id/upload/ddad3f9e0f779234b3caa07b12f90466.jpg" alt="Mata air alami Silowo">
+        </div>
+        <div class="card-content">
+          <span class="badge-tag">Keajaiban Alam</span>
+          <h3 style="margin-bottom:8px"> Sumber Mata Air Jernih</h3>
+          <p>Berasal langsung dari batuan karst dengan suhu sejuk 22-24°C. Airnya begitu transparan sehingga ikan kecil dan pasir di kedalaman terlihat jelas.</p>
+        </div>
+      </div>
+      <div class="card-attraction">
+        <div class="card-img-box">
+          <img src="https://nagantour.com/wp-content/uploads/2024/11/Berkano-di-Wisata-Silowo-Tuban.webp" alt="Hutan sagu Silowo Tuban">
+        </div>
+        <div class="card-content">
+          <span class="badge-tag">Lanskap Tropis</span>
+          <h3 style="margin-bottom:8px"> Rimbun Hutan Sagu</h3>
+          <p>Kanopi daun pohon sagu purba menjulang tinggi memayungi sungai, menghadirkan nuansa petualangan layaknya menyusuri Sungai Amazon versi ramah keluarga.</p>
+        </div>
+      </div>
+      <div class="card-attraction">
+        <div class="card-img-box">
+          <img src="https://blog.pigijo.com/wp-content/uploads/2023/05/Wisata-Silowo-Merakurak.jpg" alt="Spot foto kano Silowo">
+        </div>
+        <div class="card-content">
+          <span class="badge-tag">Fotografi</span>
+          <h3 style="margin-bottom:8px"> Spot Estetik & Healing</h3>
+          <p>Kombinasi warna kano, pantulan air toska, dan berkas sinar matahari pagi yang menembus celah dedaunan menghasilkan komposisi foto yang memukau.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Aktivitas Section -->
+  <section class="reveal" id="aktivitas">
+    <div class="section-header">
+      <span style="color:var(--gold-accent)">Aktivitas Seru</span>
+      <h2 style="color:#fff">Kegiatan Favorit Pengunjung</h2>
+      <p style="color:rgba(255,255,255,0.9)">Semua aktivitas dipandu warga lokal dengan mengedepankan keamanan dan harga yang sangat bersahabat.</p>
+    </div>
+    <div class="activities-grid">
+      <div class="activity-card">
+        <h3>Susur Sungai Kano</h3>
+        <p>Menyusuri lorong sagu sejauh 300 meter dengan kano santai. Sewa mulai Rp10.000 - Rp15.000 dengan arus air yang sangat tenang dan aman pemula.</p>
+      </div>
+      <div class="activity-card">
+
+        <h3>Berenang & Main Air</h3>
+        <p>Zona berenang terbagi untuk anak (kedalaman 50cm) dan dewasa (120cm). Air segar alami tanpa kaporit langsung dari sumber mata air.</p>
+      </div>
+      <div class="activity-card">
+
+        <h3>Kuliner Sagu Lokal</h3>
+        <p>Mencicipi jajanan tradisional hasil olahan pohon sagu warga setempat, seperti bubur sagu, dawet sagu segar, dan gethuk lezat.</p>
+      </div>
+      <div class="activity-card">
+
+        <h3>Piknik & Gazebo</h3>
+        <p>Tersedia belasan gazebo bambu nyaman di tepian sungai. Anda bisa bersantai bersama keluarga ditemani gemericik air dan hembusan angin sejuk.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Pengunjung Section -->
+  <section class="audience-section reveal" id="audiens">
+    <div class="section-header">
+      <span style="color:var(--gold-accent)">Pilihan Sesuai Kebutuhan</span>
+      <h2 style="color:#fff">Cocok untuk Keluarga & Generasi Muda</h2>
+      <p style="color:rgba(255,255,255,0.9)">Silowo dirancang ramah untuk liburan santai bersama si kecil maupun petualangan konten kreator.</p>
+    </div>
+    <div class="audience-tabs">
+      <button class="tab-btn active" onclick="switchTab('keluarga')"> Untuk Keluarga</button>
+      <button class="tab-btn" onclick="switchTab('remaja')">Untuk Remaja & Gen Z</button>
+    </div>
+    <div class="audience-content-grid active" id="tab-keluarga">
+      <div class="audience-card">
+        <h4> Kolam Pasir Dangkal Ramah Anak</h4>
+        <p>Keluarga dengan balita dapat bermain di tepian dengan kedalaman hanya 50 cm berdasar pasir halus. Orang tua dapat memantau santai dari gazebo berjarak 2 meter.</p>
+      </div>
+      <div class="audience-card">
+        <h4> Tempat Kumpul & Arisan Luas</h4>
+        <p>Area terbuka yang rindang sangat pas untuk acara kumpul keluarga besar, reuni, ataupun arisan dengan membawa bekal sendiri dari rumah.</p>
+      </div>
+    </div>
+    <div class="audience-content-grid" id="tab-remaja">
+      <div class="audience-card">
+        <h4> Sudut Sinematik Instagram & TikTok</h4>
+        <p>Mendayung kano di bawah pantulan sinar matahari jam 8-10 pagi menciptakan footage video estetik tanpa perlu banyak grading warna tambahan.</p>
+      </div>
+      <div class="audience-card">
+        <h4>Healing Bersama Sahabat Budget Pelajar</h4>
+        <p>Liburan hemat tanpa perlu menguras dompet. Cukup dengan tiket Rp5.000 dan sewa kano terjangkau untuk melepas penat ujian sekolah atau kuliah.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Galeri Section -->
+  <section class="gallery-section reveal" id="galeri">
+    <div class="section-header">
+      <span>Dokumentasi Visual</span>
+      <h2>Galeri Foto Silowo</h2>
+      <p>Kumpulan potret nyata keindahan Ekowisata Silowo dari para pengunjung.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://www.nativeindonesia.com/foto/2024/08/ekowisata-silowo-tuban.jpg" alt="Foto lanskap Silowo"></div>
+      <div class="gallery-item"><img src="https://cdn.surabayapagi.com/po-content/uploads/202506/silowo-tuban-destinasi-favorite-foto.jpg" alt="Pemandangan sungai Silowo"></div>
+      <div class="gallery-item"><img src="https://pagaralampos.disway.id/upload/ddad3f9e0f779234b3caa07b12f90466.jpg" alt="Jernihnya air Silowo"></div>
+      <div class="gallery-item"><img src="https://nagantour.com/wp-content/uploads/2024/11/Berkano-di-Wisata-Silowo-Tuban.webp" alt="Wisatawan berkano di Silowo"></div>
+      <div class="gallery-item"><img src="https://blog.pigijo.com/wp-content/uploads/2023/05/Wisata-Silowo-Merakurak.jpg" alt="Kano di tepian sungai Silowo"></div>
+      <div class="gallery-item"><img src="https://pagaralampos.disway.id/upload/1179e25ceccbe6bda10e56fa44c29438.jpg" alt="Suasana teduh hutan sagu Silowo"></div>
+    </div>
+  </section>
+  <!-- Video TikTok Section (Perbaikan ID Video Asli & Tampilan Responsif) -->
+  <section class="video-section reveal" id="video">
+    <div class="section-header">
+      <span>Video Virtual Tour</span>
+      <h2>Rasakan Suasana Asli Silowo</h2>
+      <p>Tonton cuplikan keasrian susur sungai dan beningnya air Silowo langsung dari video TikTok berikut.</p>
+    </div>
+    <div class="video-grid">
+      <!-- Player Video TikTok yang Sudah Benar -->
+      <div class="tiktok-card-container">
+        <div class="tiktok-iframe-wrapper">
+          <!-- ID Asli Video: 7685045483768892693 -->
+          <iframe 
+            src="https://www.tiktok.com/embed/v2/7685045483768892693?lang=id-ID" 
+            title="Video Suasana Ekowisata Silowo Tuban di TikTok"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div style="padding:16px 8px 6px;text-align:center">
+          <a href="https://vt.tiktok.com/ZSq9N6RHF/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center">
+             Buka Langsung di Aplikasi TikTok
+          </a>
+        </div>
+      </div>
+      <!-- Deskripsi Info Video -->
+      <div>
+        <h3 style="font-size:28px;color:var(--emerald-dark);font-weight:800;margin-bottom:16px">Kenapa Wajib Nonton Video Ini?</h3>
+        <p style="color:#334155;font-weight:500;margin-bottom:14px">
+          <b>1. Bukti Kejernihan Nyata:</b> Video menunjukkan langsung bagaimana dasar sungai pasir putih terlihat jelas tanpa manipulasi kamera.
+        </p>
+        <p style="color:#334155;font-weight:500;margin-bottom:14px">
+          <b>2. Gambaran Suasana Lorong Sagu:</b> Rasakan sensasi ketenangan suara air dan sejuknya kanopi pohon sagu setinggi 15 meter saat mendayung kano.
+        </p>
+        <p style="color:#334155;font-weight:500;margin-bottom:24px">
+          <b>3. Referensi Sebelum Berkunjung:</b> Sangat berguna untuk mengetahui kondisi rute dan wahana kano terkini sebelum berangkat.
+        </p>
+        
+        <div style="background:#fff;padding:24px;border-radius:20px;border-left:5px solid var(--gold-accent);box-shadow:0 10px 25px rgba(0,0,0,0.05)">
+          <p style="color:#093325;font-size:14px;font-weight:700">
+           Tips Kunjungan: Waktu paling direkomendasikan adalah pukul 08.00 - 10.00 WIB ketika sinar matahari menembus celah dedaunan sagu dengan pantulan warna toska paling maksimal!
+          </p>
+          <a href="https://vt.tiktok.com/ZSq9N6RHF/" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:10px;color:#198059;font-weight:800;text-decoration:none;font-size:14px">
+             Tautan Video: vt.tiktok.com/ZSq9N6RHF/
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Lokasi Section -->
+  <section class="reveal" id="lokasi">
+    <div class="section-header">
+      <span>Informasi Kunjungan</span>
+      <h2>Lokasi & Rute Perjalanan</h2>
+      <p>Akses mudah dari pusat kota Tuban dengan jalan beraspal halus hingga pintu masuk.</p>
+    </div>
+    <div class="location-grid">
+      <div class="info-card">
+        <h3 style="font-size:22px;color:var(--emerald-dark);margin-bottom:24px;font-weight:800">Detail Informasi Wisata</h3>
+        
+        <div class="info-row">
+          <div class="info-icon-box">A</div>
+          <div class="info-text">
+            <h4>Alamat Lengkap</h4>
+            <p>Dusun Krajan, Desa Mandirejo, Kecamatan Merakurak, Kabupaten Tuban, Jawa Timur. Hanya sekitar 15 menit dari Alun-Alun Kota Tuban.</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon-box">J</div>
+          <div class="info-text">
+            <h4>Jam Operasional</h4>
+            <p>Buka setiap hari mulai pukul 08.00 s/d 15.00 WIB. Waktu terbaik berkunjung adalah pagi hari sebelum terik dan sebelum antrean ramai.</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon-box">T&F</div>
+          <div class="info-text">
+            <h4>Tarif & Fasilitas</h4>
+            <p>Tiket masuk Rp5.000/orang. Parkir motor Rp2.000, mobil Rp5.000. Sewa kano Rp10.000 - Rp15.000. Fasilitas mushola, toilet, gazebo gratis, dan warung makan.</p>
+          </div>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Silowo+Merakurak+Tuban" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;margin-top:20px;justify-content:center">
+          Buka Petunjuk Arah di Google Maps 
+        </a>
+      </div>
+      <div class="map-card-banner">
+        <div>
+          <h3 style="font-size:32px;font-weight:800">Silowo, Merakurak</h3>
+          <p style="margin:15px 0 24px;color:rgba(255,255,255,0.92);max-width:380px">
+            Nikmati kesegaran air jernih dan keasrian rimbunnya sagu alami bersama orang terdekat Anda.
+          </p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Silowo+Merakurak+Tuban" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Lihat Peta Lokasi
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3 style="color:var(--gold-accent);font-size:24px;font-weight:800;margin-bottom:14px">SILOWO TUBAN</h3>
+        <p style="color:rgba(255,255,255,.65);font-size:14px;max-width:360px">
+          Destinasi ekowisata alam unggulan di Kabupaten Tuban yang menyuguhkan keindahan mata air jernih dan hutan sagu asri yang dikelola berkelanjutan oleh warga lokal.
+        </p>
+      </div>
+      <div>
+        <h4 style="margin-bottom:18px">Navigasi Cepat</h4>
+        <ul style="list-style:none">
+          <li style="margin-bottom:10px"><a href="#profil" style="color:rgba(255,255,255,.7);text-decoration:none">Profil Lengkap</a></li>
+          <li style="margin-bottom:10px"><a href="#video" style="color:rgba(255,255,255,.7);text-decoration:none">Video TikTok</a></li>
+          <li><a href="#aktivitas" style="color:rgba(255,255,255,.7);text-decoration:none">Aktivitas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom:18px">Lokasi</h4>
+        <p style="color:rgba(255,255,255,.7);font-size:14px;line-height:1.7">
+          Dusun Krajan, Desa Mandirejo<br>
+          Kec. Merakurak, Tuban<br>
+          Jawa Timur, Indonesia
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="currentYear"></span> Ekowisata Silowo Tuban. Seluruh hak cipta dilindungi.</p>
+      <p>present by Afi,Ary,Azam,Ibra</p>
+      <p>Abu Ubaidah-SMP Techno Insan Kamil Tuban</p>
+    </div>
+  </footer>
+  <!-- JavaScript: Dioptimalkan dengan IntersectionObserver & Handler Responsif -->
+  <script>
+    // 1. Tahun Otomatis di Footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    // 2. Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }, { passive: true });
+    // 3. Mobile Hamburger Menu Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+    // 4. Tab Switcher Audiens
+    function switchTab(type) {
+      document.querySelectorAll('.audience-content-grid').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      if (type === 'keluarga') {
+        document.getElementById('tab-keluarga').classList.add('active');
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+      } else {
+        document.getElementById('tab-remaja').classList.add('active');
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+      }
+    }
+    // 5. Scroll Reveal yang Ringan & Modern Menggunakan IntersectionObserver
+    const revealElements = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            obs.unobserve(entry.target); // Cukup animasi sekali agar performa optimal
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      // Fallback untuk browser lawas
+      revealElements.forEach(el => el.classList.add('active'));
+    }
+  </script>
+
+</body>
+</html>
